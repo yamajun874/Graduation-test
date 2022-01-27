@@ -84,11 +84,12 @@
   </header>
 
 
-  @if (Auth::check())
+  <!-- ログイン確認 -->
+  <!-- @if (Auth::check())
   ログインしています。
   @else
   ログインしていません。
-  @endif
+  @endif -->
 
   <!-- 検索結果表示欄 -->
   @if(isset($items))
