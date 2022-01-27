@@ -1,0 +1,1211 @@
+/* 全体 */
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+body {
+  background: #DDDDDD;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* register.blade.php */
+
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-logo {
+  width: 50px;
+  height: 50px;
+  background: #3333FF;
+  padding: 5px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 5px 4px 10px black;
+  margin-left: 50px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.line-top, .line-middle, .line-bottom {
+  background: white;
+  height: 2px;
+  width: 30px;
+  display: block;
+  position: absolute;
+  transition: 0.6s;
+}
+
+.line-top {
+  width: 15px;
+  top: 20px;
+  left: 25%;
+}
+
+.line-middle {
+  width: 30px;
+  top: 30px;
+  left: 25%;
+}
+
+.line-bottom {
+  width: 7px;
+  top: 40px;
+  left: 25%;
+}
+
+.header-ttl {
+  color: #3333FF;
+  font-size: 40px;
+  margin-left: 30px;
+}
+
+.register-wrapper {
+  max-width: 500px;
+  min-height: 300px;
+  background: white;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+}
+
+.register-ttl {
+  background: #3333FF;
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.username input, .email input, .password input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #666666;
+  font-size: 20px;
+  /* margin-top: 25px; */
+}
+
+.username, .email, .password {
+  width: 100%;
+  background: turquoise;
+  position: relative;
+  margin-top: 27px;
+}
+
+
+.username::before {
+  content: " ";
+  background: url("../img/user.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+}
+
+.email::before {
+  content: " ";
+  background: url("../img/mail.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+}
+
+.password::before {
+  content: " ";
+  background: url("../img/password.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+}
+
+.register-form {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button-flex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.register-btn {
+  background: #3333FF;
+  border: none;
+  color: white;
+  width: 65px;
+  height: 35px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 27px 0;
+}
+
+.register-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+/* inputタグには疑似要素は使えない */
+
+/* アイコンの変化 */
+.header-logo.open span:nth-of-type(1) {
+  top: 30px;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.header-logo.open span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header-logo.open span:nth-of-type(3) {
+  top: 30px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+/* ドロワーメニュー */
+
+.drower-menu {
+  background: white;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: 0.6s;
+}
+
+.drower-menu-nav {
+  display: block;
+  margin-top: 250px;
+}
+
+.drower-menu-item a{
+  text-decoration: none;
+  color: #3333FF;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.in {
+  transform: translateX(100%);
+}
+
+
+/* thanks.blade.php */
+.thanks-wrapper {
+  background: white;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+  text-align: center;
+}
+
+.thanks-text {
+  font-size: 25px;
+  padding-top: 100px;
+}
+
+.login-btn {
+  background: #3333FF;
+  border: none;
+  color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.login-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+/* login.blade.php */
+
+.login-btn--page {
+  background: #3333FF;
+  border: none;
+  color: white;
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 27px 0;
+}
+
+.login-btn--page:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.login-wrapper {
+  max-width: 500px;
+  min-height: 200px;
+  background: white;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+}
+
+.login-ttl {
+  background: #3333FF;
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.login-form {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* index.blade.php */
+
+.drower-menu--index {
+  background: white;
+  z-index: 10;
+  height: 250vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: 0.6s;
+}
+
+.header--index {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-item--left {
+  display: flex;
+  align-items: center;
+}
+
+.serch-form {
+  height: 55px;
+  background: white;
+  margin-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-shadow: 5px 4px 10px black;
+}
+
+.area-item {
+  position: relative;
+  width: 120px;
+}
+
+.area-item::after {
+  content: " ";
+  background: url("../img/arrow.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.select--area {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.genre-item {
+  position: relative;
+  width: 120px;
+}
+
+.genre-item::after {
+  content: " ";
+  background: url("../img/arrow.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.select--genre {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.select--area, .select--genre {
+  border: none;
+  border-right: 2px solid #afa7a7;
+  -webkit-appearance: none;
+  appearance: none; /* デフォルトのスタイルを無効 */
+}
+
+.search-btn {
+  color: #666666;
+  font-weight: bold;
+  border: 1px solid #666666;
+  border-radius: 10px;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  transition: 0.6s;
+  opacity: 0.6;
+}
+
+
+.shop-name input {
+  display: block;
+  height: 34px;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  color: #666666;
+}
+
+.shop-name {
+  position: relative;
+  padding-left: 50px;
+  width: 300px;
+  margin-right: 20px;
+}
+
+.shop-name:before {
+  content: " ";
+  background: url("../img/search.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  opacity: 0.5;
+  margin-left: 10px;
+}
+
+.shop-card-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-width: 24%;
+  background: white;
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card:nth-of-type(4n) {
+  margin-right: 0px;
+}
+
+.card-img img {
+  border-radius: 10px 10px 0 0;
+  height: 150px;
+}
+
+.card-text {
+  background: white;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.text-ttl {
+  font-size: 20px;
+}
+
+.text-tag {
+  display: flex;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.area-tag {
+  margin-right: 4px;
+}
+
+.detail-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #3333FF;
+  display: block;
+  width: 110px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.detail-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.text-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unlikes-btn {
+  font-size: 30px;
+  cursor: pointer;
+  color: #afa7a7;
+}
+
+.likes-btn {
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+}
+
+/* detail.blade.php */
+
+.detail-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-flex--left {
+  width: 45%;
+}
+
+.detail-header {
+  margin-left: 70px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.detail__back-logo {
+  text-decoration: none;
+  color: black;
+  background: white;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail__back-logo:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.detail-ttl {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.detail-wrapper {
+  margin-left: 70px;
+}
+
+.detail-tag {
+  display: flex;
+  margin: 30px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.detail__area-tag {
+  margin-right: 5px;
+}
+
+.detail-text {
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.detail-flex--right {
+  width: 44%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 70px;
+  /* background: #405fee; */
+  /* border-radius: 12px; */
+  /* position: relative; */
+  /* box-shadow: 5px 4px 10px black; */
+}
+
+.reservation-wrapper--detail {
+  width: 100%;
+  height: 62%;
+  background: #405fee;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 5px 4px 10px black;
+}
+
+/* evaluationコーナー */
+
+.evaluation-wrapper {
+  width: 100%;
+  height: 35%;
+  background: #405fee;
+  border-radius: 12px;
+  box-shadow: 5px 4px 10px black;
+  margin-top: 15px;
+  position: relative;
+}
+
+.evaluation-ttl {
+  color: white;
+  font-size: 30px;
+  /* margin-top: 50px; */
+  padding-top: 20px;
+  margin-left: 30px;
+}
+
+.evaluation-number {
+  position: relative;
+  width: 85%;
+}
+
+.evaluation-number::after {
+  content: " ";
+  background: url("../img/arrow.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 3px;
+  right: -10px;
+  opacity: 0.5;
+}
+
+.evaluation-comment {
+  margin-left: 30px;
+  margin-top: 20px;
+  display: block;
+  width: 85%;
+  height: 60px;
+  font-size: 17px;
+  border-radius: 8px;
+}
+
+.evaluation-btn {
+  display: block;
+  width: 100%;
+  color: white;
+  background: #3333FF;
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 0 0 12px 12px;
+}
+
+.evaluation-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+
+/* evaluationコーナー終了 */
+
+.reservation-ttl {
+  color: white;
+  font-size: 30px;
+  /* margin-top: 50px; */
+  padding-top: 20px;
+  margin-left: 30px;
+}
+
+.date {
+  display: block;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 17px;
+  padding: 3px 7px;
+  width: 35%;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid;
+}
+
+.select--time, .select--number, .select--evaluation {
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 17px;
+  height: 30px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  appearance: none; /* デフォルトのスタイルを無効 */
+}
+
+.time-item {
+  position: relative;
+  width: 85%;
+}
+
+.time-item::after {
+  content: " ";
+  background: url("../img/arrow.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 3px;
+  right: -10px;
+  opacity: 0.5;
+}
+
+.number-item {
+  position: relative;
+  width: 85%;
+}
+
+.number-item::after {
+  content: " ";
+  background: url("../img/arrow.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 3px;
+  right: -10px;
+  opacity: 0.5;
+}
+
+.reservation-table {
+  color: white;
+  background: #5c78f3;
+  width: 80%;
+  margin-left: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.reservation-table tr {
+  display: flex;
+  padding-left: 20px;
+}
+
+.reservation-table tr:nth-of-type(1) {
+  padding-top: 30px;
+}
+
+.reservation-table tr:not(:last-child) {
+  padding-bottom: 15px;
+}
+
+.reservation-table tr:last-child {
+  padding-bottom: 30px;
+}
+
+.reservation-table th {
+  display: block;
+  width: 120px;
+  text-align: left;
+}
+
+.reservation-table td {
+  display: block;
+}
+
+.reservation-btn {
+  display: block;
+  width: 100%;
+  color: white;
+  background: #3333FF;
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 0 0 12px 12px;
+}
+
+.reservation-btn--login {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  background: #3333FF;
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 0 0 12px 12px;
+}
+
+.reservation-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.reservation-btn--login:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.error-text--detail {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.drower-menu--detail {
+  background: white;
+  z-index: 10;
+  height: 120vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: 0.6s;
+}
+
+/* 口コミコーナー */
+.comment-wrapper {
+  margin-right: 70px;
+  margin-left: 70px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.comment-ttl {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.comment-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.comment-item {
+  background: white;
+  width: 31%;
+  min-height: 150px;
+  font-size: 17px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+  margin-bottom: 30px;
+}
+
+.comment--user-name {
+  margin-top: 20px;
+  margin-left: 55px;
+  position: relative;
+}
+
+.comment--user-name::before {
+  content: " ";
+  background: url(../img/user.icon.jpeg);
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 0;
+  left: -35px;
+}
+
+.comment-evaluation-num {
+  margin-top: 15px;
+  margin-left: 55px;
+  position: relative;
+}
+
+.comment-evaluation-num::before {
+  content: " ";
+  background: url(../img/favorite.icon.jpeg);
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 0;
+  left: -35px;
+}
+
+
+.comment--user-comment {
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 10px 5px;
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+}
+
+/* 口コミコーナー終了 */
+
+/* done.blade.php */
+
+.done-wrapper {
+  background: white;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+  text-align: center;
+}
+
+.done-text {
+  font-size: 25px;
+  padding-top: 100px;
+}
+
+.done-btn {
+  background: #3333FF;
+  border: none;
+  color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.done-btn:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+/* mypage.blade.php */
+
+.mypage-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 70px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.reservation-wrapper--mypage {
+  width: 42%;
+  margin-top: 50px;
+  counter-reset: hoge;
+}
+
+.reservation-ttl--mypage {
+  font-size: 25px;
+}
+
+.reservation-item--mypage {
+  margin-top: 30px;
+  background: #405fee;
+  color: white;
+  padding: 40px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 10px black;
+}
+
+.reservation-item--ttl {
+  padding-bottom: 20px;
+  position: relative;
+  padding-left: 50px;
+}
+
+.reservation-item--ttl::after {
+  counter-increment: hoge;
+  content: counter(hoge);
+}
+
+.reservation-item--ttl::before {
+  content: " ";
+  background: url("../img/watch2.icon.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  top: -4px;
+  border-radius: 20px;
+}
+
+.reservation-btn-wrapper {
+  display: flex;
+}
+
+.reservation-update-icon {
+  background: url("../img/update.icon.jpeg");
+  background-size: cover;
+  width: 26px;
+  height: 26px;
+  margin-right: 15px;
+  margin-top: -4px;
+  border: white 2px solid;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.reservation-update-icon:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.reservation-delete-icon {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 40px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute;
+  right: 0;
+  top: -4px; */
+  background: #405fee;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+.reservation-header--flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reservation-delete-icon:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+
+
+.mypage-table tr {
+  display: block;
+  margin-top: 30px;
+  display: flex;
+}
+
+.mypage-table tr:last-child {
+  margin-bottom: 10px;
+}
+
+.mypage-table td {
+  display: block;
+}
+
+.mypage-table td input {
+  font-size: 18px;
+  color: white;
+  border-radius: 10px;
+  border: white 1px solid;
+  display: block;
+  background: #405fee;
+  padding: 0 10px;
+}
+
+.reservation-datetime--mypage {
+  font-size: 18px;
+  border-radius: 10px;
+  border-color: white;
+  color: white;
+  background: #405fee;
+  padding: 0 10px;
+  width: 90px;
+}
+
+.reservation-number--mypage {
+  font-size: 18px;
+  border-radius: 10px;
+  border-color: white;
+  color: white;
+  background: #405fee;
+  padding: 0 10px;
+  width: 90px;
+}
+
+.mypage-table td:nth-child(odd) {
+  width: 130px;
+}
+
+.like-wrapper--mypage {
+  width: 52%;
+}
+
+.user-name {
+  font-size: 32px;
+}
+
+.like-ttl--mypage {
+  font-size: 25px;
+  margin-top: 18px;
+}
+
+.like-card--flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card--mypage {
+  width: 48%;
+  margin-top: 30px;
+  box-shadow: 5px 4px 10px black;
+  border-radius: 10px;
+}
+
+.card-img--mypage img {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-text--mypage {
+  background: white;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.text-ttl--mypage {
+  font-size: 20px;
+}
+
+.text-tag--mypage {
+  display: flex;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px
+}
+
+.area-tag--mypage {
+  margin-right: 4px;
+}
+
+.text-bottom--mypage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-btn--mypage {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #3333FF;
+  display: block;
+  width: 110px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.detail-btn--mypage:hover {
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.reservation-item--mypage:last-child {
+  margin-bottom: 30px;
+}
